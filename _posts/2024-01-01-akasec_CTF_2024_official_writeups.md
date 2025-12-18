@@ -1,11 +1,11 @@
 ---
-title: "Akasec CTF 2024 Cryptography"
+title: "Akasec CTF 2024 Cryptography Official Writeups"
 date: 2024-01-01 12:00:00 +0800
 categories: [cryptography]
 tags: [cryptography]
 ---
 
-# Akasec-CTF-2024 Crypto
+# Akasec CTF 2024 Cryptography Official Writeups
 
 ## [Lost](https://github.com/sou200/Akasec-CTF-2024/tree/master/Lost)
 Do you know the feeling of losing a part of you !!

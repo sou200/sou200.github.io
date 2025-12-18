@@ -1,15 +1,17 @@
 ---
-title: "Cyber Odessy 2025 Cryptography"
+title: "Cyber Odessy 2025 Cryptography Writeups"
 date: 2025-12-05 12:00:00 +0800
 categories: [cryptography]
 tags: [cryptography]
 ---
 
-# [Sistim Taye7](https://github.com/Akasec-1337/Cyber-Odyssey-2025-Finals/tree/main/Cryptography/Sistim%20Taye7)
+# Cyber Odessy 2025 Cryptography Official Writeups
+
+## [Sistim Taye7](https://github.com/Akasec-1337/Cyber-Odyssey-2025-Finals/tree/main/Cryptography/Sistim%20Taye7)
 **Don't ask me If you find an error in the challenge,
 because even me I can't fix it.**
 
-## Code:
+**Code:**
 ```py
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.primitives import padding
@@ -269,10 +271,10 @@ if __name__ == "__main__":
 
 ```
 
-## Solve:
+**Solve:**
 the challenge is just a simple AES CBC bit flipping in the IV. then you can change the sender id and send the amount you want.
 
-## Code:
+**Code:**
 ```py
 from pwn import *
 import ast
@@ -357,11 +359,11 @@ print_flag()
 
 ```
 
-# [DON'TTAKEITPERSONALLY](https://github.com/Akasec-1337/Cyber-Odyssey-2025-Finals/tree/main/Cryptography/DON'TTAKEITPERSONALLY)
+## [DON'TTAKEITPERSONALLY](https://github.com/Akasec-1337/Cyber-Odyssey-2025-Finals/tree/main/Cryptography/DON'TTAKEITPERSONALLY)
 **“if you want to shine like sun first you have to burn like it.”
 ― Adolf Hitler**
 
-## Code:
+**Code:**
 ```py
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.primitives import padding
@@ -632,11 +634,11 @@ if __name__ == "__main__":
             print(f"Error: {e}")
 ```
 
-## Solve:
+**Solve:**
 The challenge is just bypassing the auth tag by exploiting cryptography python package.
 ```A flaw was found in python-cryptography versions between >=1.9.0 and <2.3. The finalize_with_tag API did not enforce a minimum tag length. If a user did not validate the input length prior to passing it to finalize_with_tag an attacker could craft an invalid payload with a shortened tag (e.g. 1 byte) such that they would have a 1 in 256 chance of passing the MAC check. GCM tag forgeries can cause key leakage.```
 
-## Code:
+**Code:**
 ```py
 from pwn import *
 import ast
@@ -724,26 +726,26 @@ for byte in range(256):
         break
 ```
 
-# (sourceless)[https://github.com/Akasec-1337/Cyber-Odyssey-2025-Finals/tree/main/Cryptography/sourceless]
+## [sourceless](https://github.com/Akasec-1337/Cyber-Odyssey-2025-Finals/tree/main/Cryptography/sourceless)
 **maybe it looks familiar but it's not, maybe it looks guessy but it's not.
 maybe and maybe bla bla bla ... just solve it.**
 
-## ciphertext
-```py
+**ciphertext**
+```
 8b1eec5cbc226bd03631fa3b5c725157d1a9b2b85dce41c3c1fccd0c04d39f21a0cbde80a6071e2b32096c2e0eff33d844ee6d675407ace18289357d60ba4b2daa4ed4d070fec06687e249e0e6f9ee45861c4f67e887dec85292d36ab05cd7a1a727522853a0acfad59379b3e050338bf9f23cfc172ee7872346ad27d7568ba9896f1b7da6b5991251debdf2c2b7df6201fdd3362399091f0a29550df3505b6a
 ```
 
-## Solve:
+**Solve:**
 this is just a SHA1 hash of 8 parts of the flag use any hash cracker
 https://crackstation.net/ (Recommended)
 ![solve](https://github.com/Akasec-1337/Cyber-Odyssey-2025-Finals/blob/main/Cryptography/sourceless/solve.png?raw=true)
 
-# [True Story](https://github.com/Akasec-1337/Cyber-Odyssey-2025-Finals/tree/main/Cryptography/True%20Story)
+## [True Story](https://github.com/Akasec-1337/Cyber-Odyssey-2025-Finals/tree/main/Cryptography/True%20Story)
 **Ibrahim started out glowing with excitement in Khouribga’s 1337, friends, and the sweet freedom of student life.
 From the calm vibes of Khenifra, he felt like he finally found his place, debugging happily and laughing his way through sleepless nights.
 Then he moved to Tangier and suddenly the guy who once smiled at compiler errors now gets depressed by the wind, the noise, and even the Wi-Fi.**
 
-## Code:
+**Code:**
 ```py
 from binascii import unhexlify
 from Crypto.Cipher import AES
@@ -865,7 +867,7 @@ if __name__ == "__main__":
             exit()
 ```
 
-## Solve:
+**Solve:**
 as you can see the first algorithm that I used is LSFR and the bytes that are generated cannot contain a NULL bytes as this code tells:
 ```py
 def get_byte(self):
@@ -881,7 +883,7 @@ so `b_data` is always non NULL (`\x00`).
 **The vulnerability:** 
 if I have `x = b'A'` and I did encrypt `x` it will never be `'A'` again because the LSFR always non NULL so the XOR will never return the same value. so the algorithm will return every value, but not the encrypted value.
 
-## Solve Code:
+**Solve Code:**
 ```py
 from pwn import process
 from string import printable
