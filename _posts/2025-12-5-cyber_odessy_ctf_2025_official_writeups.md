@@ -1,11 +1,11 @@
 ---
-title: "Cyber Odessy 2025 Cryptography Writeups"
+title: "Cyber Odessy CTF 2025 Cryptography Official Writeups"
 date: 2025-12-05 12:00:00 +0800
 categories: [cryptography]
 tags: [cryptography]
 ---
 
-# Cyber Odessy 2025 Cryptography Official Writeups
+# Cyber Odessy CTF 2025 Cryptography Official Writeups
 
 ## [Sistim Taye7](https://github.com/Akasec-1337/Cyber-Odyssey-2025-Finals/tree/main/Cryptography/Sistim%20Taye7)
 **Don't ask me If you find an error in the challenge,
